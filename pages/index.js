@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
+import EdcPasswordGenerator from '../components/passwordGenerator'
 
 const Home = () => {
   const home_url = "https://edcilo.com"
@@ -36,6 +37,7 @@ const Home = () => {
               <p className={styles['edc-pg--label']}>
                 Generate a secure password!
               </p>
+              <EdcPasswordGenerator />
             </div>
           </section>
 
