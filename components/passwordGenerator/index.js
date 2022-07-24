@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import styles from './styles.module.css'
 import Password from '../password'
 import PasswordGenerator from "../../services/password_generator"
-
+import { event } from "../../services/ga"
 
 
 const generate_password = (length, uppercase, numbers, symbols) => {
@@ -29,6 +29,11 @@ const EdcPasswordGenerator = () => {
     }
 
     useEffect(new_password_handler, [length, uppercase, numbers, symbols])
+    
+    const click_handler = () => {
+        new_password_handler()
+        event("new_password", "click-btn")
+    }
 
     return (
         <Card title={<Password password={password} />}>
@@ -66,7 +71,7 @@ const EdcPasswordGenerator = () => {
             <Button 
                 type='primary' 
                 className={styles['edc-pg--new-pass-btn']}
-                onClick={new_password_handler}
+                onClick={click_handler}
                 block>
                 New password
             </Button>
