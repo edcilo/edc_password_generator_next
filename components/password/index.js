@@ -1,11 +1,13 @@
 import {Button, Input, notification} from 'antd'
 import {CopyOutlined} from '@ant-design/icons'
 import styles from './styles.module.css'
+import { event } from "../../services/ga"
 
 
 const Password = ({ password }) => {
     const copy_to_clipboard = (password) => {
         if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+            event("copy_password", "click-btn")
             notification.open({
                 icon: <CopyOutlined />,
                 message: 'Copied!',
