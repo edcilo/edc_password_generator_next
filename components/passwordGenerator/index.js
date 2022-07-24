@@ -32,7 +32,10 @@ const EdcPasswordGenerator = () => {
     
     const click_handler = () => {
         new_password_handler()
-        event("new_password", "click-btn")
+        event("password", {
+            'event_category': 'new_password_btn',
+            'event_label': 'Password',
+        })
     }
 
     return (

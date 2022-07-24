@@ -7,7 +7,10 @@ import { event } from "../../services/ga"
 const Password = ({ password }) => {
     const copy_to_clipboard = (password) => {
         if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
-            event("copy_password", "click-btn")
+            event("password", {
+                'event_category': 'copy_btn',
+                'event_label': 'Password',
+            })
             notification.open({
                 icon: <CopyOutlined />,
                 message: 'Copied!',
