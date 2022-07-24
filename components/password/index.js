@@ -7,9 +7,11 @@ import { event } from "../../services/ga"
 const Password = ({ password }) => {
     const copy_to_clipboard = (password) => {
         if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
-            event("password", {
-                'event_category': 'copy_btn',
-                'event_label': 'Password',
+            event({ 
+                action: "copy_password",
+                category: "password_generator",
+                label: "Copy password",
+                value: "click button",
             })
             notification.open({
                 icon: <CopyOutlined />,

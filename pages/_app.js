@@ -4,9 +4,13 @@ import 'antd/dist/antd.css'
 import Script from 'next/script'
 
 function MyApp({ Component, pageProps }) {
+  const ga_url = `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`
+
   return (
     <>
-      <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+      <Script 
+        strategy="lazyOnload" 
+        src={ga_url} />
 
       <Script strategy="lazyOnload" id="google-analytics">
         {`
