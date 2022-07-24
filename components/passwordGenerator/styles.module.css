@@ -11,5 +11,6 @@
 }
 
 .edc-pg--new-pass-btn {
-    width: 100%;
+    background: var(--color-brand-complementary) !important;
+    border-color: var(--color-brand-complementary) !important;
 }

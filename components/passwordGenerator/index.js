@@ -54,7 +54,10 @@ const EdcPasswordGenerator = () => {
                     </Checkbox>
                 </Col>
                 <Col span={8}>
-                    <Checkbox checked={symbols} onChange={(e) => setSymbols(e.target.checked)}>
+                    <Checkbox 
+                        className={styles['edc-pg--checkbox']}
+                        checked={symbols} 
+                        onChange={(e) => setSymbols(e.target.checked)}>
                         Symbols
                     </Checkbox>
                 </Col>
@@ -63,7 +66,8 @@ const EdcPasswordGenerator = () => {
             <Button 
                 type='primary' 
                 className={styles['edc-pg--new-pass-btn']}
-                onClick={new_password_handler}>
+                onClick={new_password_handler}
+                block>
                 New password
             </Button>
         </Card>

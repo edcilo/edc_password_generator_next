@@ -23,9 +23,11 @@ const Password = ({ password }) => {
             </div>
             <Button
                 type="primary"
-                icon={<CopyOutlined />}
+                className={styles['edc-pg--password-copy']}
                 onClick={() => copy_to_clipboard(password)}
-                />
+            >
+                <CopyOutlined />
+            </Button>
         </div>
     )
 }
