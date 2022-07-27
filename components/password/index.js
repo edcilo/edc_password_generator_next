@@ -1,4 +1,4 @@
-import {Button, Input, notification} from 'antd'
+import {Button, Input, Tooltip, notification} from 'antd'
 import {CopyOutlined} from '@ant-design/icons'
 import styles from './styles.module.css'
 import { event } from "../../services/ga"
@@ -28,13 +28,15 @@ const Password = ({ password }) => {
             <div className={styles['edc-pg--password']}>
                 <Input value={password} readOnly />
             </div>
-            <Button
-                type="primary"
-                className={styles['edc-pg--password-copy']}
-                onClick={() => copy_to_clipboard(password)}
-            >
-                <CopyOutlined />
-            </Button>
+            <Tooltip title="Click to copy!">
+                <Button
+                    type="primary"
+                    className={styles['edc-pg--password-copy']}
+                    onClick={() => copy_to_clipboard(password)}
+                >
+                    <CopyOutlined />
+                </Button>
+            </Tooltip>
         </div>
     )
 }

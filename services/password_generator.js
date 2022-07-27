@@ -61,7 +61,7 @@ export default class PasswordGenerator {
     }
 
     get lower_length() {
-        const lower_length = Math.floor(this.length * this.proportions.lowercase)
+        const lower_length = Math.ceil(this.length * this.proportions.lowercase)
         return lower_length + (
             this.length 
             - lower_length 
@@ -72,19 +72,19 @@ export default class PasswordGenerator {
 
     get upper_length() {
         return this.with_uppercase 
-            ? Math.floor(this.length * this.proportions.uppercase) 
+            ? Math.ceil(this.length * this.proportions.uppercase) 
             : 0
     }
 
     get numbers_length() {
         return this.with_numbers
-            ? Math.floor(this.length * this.proportions.numbers)
+            ? Math.ceil(this.length * this.proportions.numbers)
             : 0
     }
 
     get symbols_length() {
         return this.with_symbols
-            ? Math.floor(this.length * this.proportions.symbols)
+            ? Math.ceil(this.length * this.proportions.symbols)
             : 0
     }
 

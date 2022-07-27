@@ -4,6 +4,8 @@
   align-content: center;
   justify-content: space-between;
   height: 100vh;
+  min-width: 390px;
+  min-height: 600px;
 }
 
 .edc-pg--cover {
@@ -12,19 +14,21 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 
-  background: #E44D26;
-  background: -webkit-linear-gradient(to right, #F16529, #E44D26);
-  background: linear-gradient(to right, #F16529, #E44D26)
+  background: var(--color-brand);
+  background: -webkit-linear-gradient(to right, var(--color-brand-light), var(--color-brand));
+  background: linear-gradient(to right, var(--color-brand-light), var(--color-brand))
 
   /* background: #cb2d3e;
   background: -webkit-linear-gradient(to right, #ef473a, #cb2d3d);
   background: linear-gradient(to right, #ef473a, #cb2d3e); */
 }
 
-.edc-pg--cover svg {
+.edc-pg--curve {
   z-index: 100;
+  position: absolute;
+  bottom: -1px;
 }
 
 .edc-pg--pattern {
@@ -33,10 +37,10 @@
   height: 100%;
   z-index: 1;
   background-image:
-      radial-gradient(var(--color-error), rgba(255,255,255, 0.5) 1px, transparent 1px),
-      radial-gradient(var(--color-error), rgba(255,255,255, 0.75) 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px;
-  background-position: 0 0, 50px 50px;
+      radial-gradient(var(--color-brand), rgba(255,255,255, 0.25) 1px, transparent 1px),
+      radial-gradient(var(--color-brand-light), rgba(255,255,255, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px;
+  background-position: 0 0, 25px 25px;
 }
 
 .edc-pg--header {
@@ -44,7 +48,8 @@
   padding: 0.5rem;
   text-align: center;
   z-index: 100;
-  position: relative;
+  position: absolute;
+  top: 0;
 }
 
 .edc-pg--header-logo-img {
@@ -59,6 +64,7 @@
   max-width: 400px;
   width: 100%;
   z-index: 100;
+  margin-top: -100px;
 }
 
 .edc-pg--footer {
@@ -73,13 +79,14 @@
   font-size: 2rem;
   color: #ffe4d8;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0rem;
+  line-height: 1.8;
 }
 
 .edc-pg--label {
   text-align: center;
   color: #ffba9c;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .link {

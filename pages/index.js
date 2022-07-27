@@ -41,7 +41,7 @@ const Home = () => {
             </div>
           </section>
 
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
+          <svg className={styles['edc-pg--curve']} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 260">
             <path 
               fill="#ffffff" 
               fillOpacity="1" 
