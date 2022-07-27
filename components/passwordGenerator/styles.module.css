@@ -1,16 +1,16 @@
 .edc-pg--slider-container {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .edc-pg--slider {
-    margin: 0;
+  margin: 0;
 }
 
 .edc-pg--checks {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .edc-pg--new-pass-btn {
-    background: var(--color-brand-complementary) !important;
-    border-color: var(--color-brand-complementary) !important;
+  background: var(--color-brand-complementary) !important;
+  border-color: var(--color-brand-complementary) !important;
 }

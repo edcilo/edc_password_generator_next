@@ -1,14 +1,14 @@
 .edc-pg--password-ctrls {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .edc-pg--password {
-    width: 100%;
-    margin-right: 1rem;
+  width: 100%;
+  margin-right: 1rem;
 }
 
 .edc-pg--password-copy {
-    background: var(--color-brand-complementary) !important;
-    border-color: var(--color-brand-complementary) !important;
+  background: var(--color-brand-complementary) !important;
+  border-color: var(--color-brand-complementary) !important;
 }

@@ -1,30 +1,29 @@
-import '../styles/variables.css'
-import '../styles/globals.css'
-import 'antd/dist/antd.css'
-import Script from 'next/script'
+import "../styles/variables.css"
+import "../styles/globals.css"
+import "antd/dist/antd.css"
+import Script from "next/script"
 
 function MyApp({ Component, pageProps }) {
-  const ad_client = process.env.NEXT_PUBLIC_AD_CLIENT
-  const ga_id = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS
-  const ga_url = `https://www.googletagmanager.com/gtag/js?id=${ga_id}`
+  const adClient = process.env.NEXT_PUBLIC_AD_CLIENT
+  const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS
+  const gaUrl = `https://www.googletagmanager.com/gtag/js?id=${gaId}`
 
   return (
     <>
-      <Script 
-        data-ad-client={ad_client} 
-        async 
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
+      <Script
+        data-ad-client={adClient}
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
 
-      <Script 
-        strategy="lazyOnload" 
-        src={ga_url} />
+      <Script strategy="lazyOnload" src={gaUrl} />
 
       <Script strategy="lazyOnload" id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${ga_id}', {
+          gtag('config', '${gaId}', {
             page_path: window.location.pathname,
           });
         `}

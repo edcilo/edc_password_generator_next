@@ -17,8 +17,16 @@
   justify-content: center;
 
   background: var(--color-brand);
-  background: -webkit-linear-gradient(to right, var(--color-brand-light), var(--color-brand));
-  background: linear-gradient(to right, var(--color-brand-light), var(--color-brand))
+  background: -webkit-linear-gradient(
+    to right,
+    var(--color-brand-light),
+    var(--color-brand)
+  );
+  background: linear-gradient(
+    to right,
+    var(--color-brand-light),
+    var(--color-brand)
+  );
 
   /* background: #cb2d3e;
   background: -webkit-linear-gradient(to right, #ef473a, #cb2d3d);
@@ -36,9 +44,16 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-image:
-      radial-gradient(var(--color-brand), rgba(255,255,255, 0.25) 1px, transparent 1px),
-      radial-gradient(var(--color-brand-light), rgba(255,255,255, 0.3) 1px, transparent 1px);
+  background-image: radial-gradient(
+      var(--color-brand),
+      rgba(255, 255, 255, 0.25) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      var(--color-brand-light),
+      rgba(255, 255, 255, 0.3) 1px,
+      transparent 1px
+    );
   background-size: 50px 50px, 50px 50px;
   background-position: 0 0, 25px 25px;
 }
@@ -91,5 +106,5 @@
 
 .link {
   text-decoration: none;
-  color: #E44D26;
+  color: #e44d26;
 }
