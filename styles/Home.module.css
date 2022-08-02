@@ -91,7 +91,7 @@
 
 .edc-pg--title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #ffe4d8;
   font-weight: bold;
   margin-bottom: 0rem;
@@ -99,12 +99,23 @@
 }
 
 .edc-pg--label {
+  font-size: 1rem;
   text-align: center;
   color: #ffba9c;
   margin-bottom: 2.5rem;
 }
 
+.edc-pg--disclaimer {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--color-brand-light2);
+}
+
 .link {
   text-decoration: none;
-  color: #e44d26;
+  color: var(--color-brand);
+}
+
+.link:hover {
+  color: var(--color-brand-dark);
 }
