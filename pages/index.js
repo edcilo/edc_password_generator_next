@@ -1,14 +1,20 @@
 import styles from "../styles/Home.module.css"
 import { NextSeo } from "next-seo"
+import { useTheme } from "next-themes"
 import Image from "next/image"
 import EdcPasswordGenerator from "../components/passwordGenerator"
 import EdcLocaleCtrl from "../components/localeCtrl"
+import EdcThemeCtrl from "../components/themeCtrl"
 import I18n from "../components/i18n"
 import SEO from "../seo"
 
 const Home = () => {
+  const { theme } = useTheme()
   const homeUrl = "https://edcilo.com"
-  const logoUrl = "https://storage.edcilo.com/edcilo-logo-clear.svg"
+  const logoUrl =
+    theme === "light"
+      ? "https://storage.edcilo.com/edcilo-logo-clear.svg"
+      : "https://storage.edcilo.com/edcilo-logo-dark.svg"
 
   return (
     <>
@@ -30,7 +36,11 @@ const Home = () => {
                 />
               </a>
 
-              <EdcLocaleCtrl className={styles["edc-pg--locale-ctrl"]} />
+              <span>
+                <EdcLocaleCtrl className={styles["edc-pg--locale-ctrl"]} />
+                &nbsp;
+                <EdcThemeCtrl />
+              </span>
             </div>
           </header>
 
@@ -55,7 +65,7 @@ const Home = () => {
             viewBox="0 0 1440 260"
           >
             <path
-              fill="#ffffff"
+              fill="var(--fill-blank)"
               fillOpacity="1"
               d="M0,96L120,128C240,160,480,224,720,234.7C960,245,1200,203,1320,181.3L1440,160L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
             />

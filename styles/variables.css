@@ -75,4 +75,17 @@
   --fill-lighter: #fafafa;
   --fill-extra-light: #fafcff;
   --fill-blank: #ffffff;
+  --fill-dark: #000000;
+}
+
+[data-theme='dark'] {
+  --color-brand-dark: #26e493;
+  --color-brand: #1ba067;
+  --color-brand-light: #3dc889;
+  --color-brand-light1: #3d7e62;
+  --color-brand-light2: #005932;
+  --color-brand-complementary: #e44d26;
+  --border-base: #606266;
+  --fill-blank: #303133;
+  --fill-dark: #ffffff;
 }

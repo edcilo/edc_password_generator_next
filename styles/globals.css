@@ -15,17 +15,38 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+/* overwriting antd styles */
+.ant-card {
+  background: var(--fill-blank) !important;
+  color: var(--fill-dark) !important;
 }
 
-/* overwriting antd styles */
+.ant-card.ant-card-bordered {
+  border-color: var(--border-base);
+}
+
+.ant-card-head {
+  border-bottom-color: var(--border-base) !important;
+}
+
+.ant-card-body h4,
+.ant-card-body label {
+  color: var(--fill-dark) !important;
+}
+
+.ant-switch {
+  box-shadow: 0 0 0 1px var(--color-brand-light2) !important;
+  background: var(--color-brand-light) !important;
+}
+
+.ant-switch svg {
+  fill: var(--color-brand-light2);
+}
+
+.ant-switch-checked {
+  background-color: var(--color-brand-light) !important;
+}
+
 .ant-checkbox-checked::after {
   border-color: var(--color-brand-complementary) !important;
 }

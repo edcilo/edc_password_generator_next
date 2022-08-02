@@ -110,7 +110,7 @@
 .edc-pg--title {
   text-align: center;
   font-size: 1.8rem;
-  color: #ffe4d8;
+  color: var(--color-brand-light2);
   font-weight: bold;
   margin-bottom: 1.4rem;
   line-height: 1.2;
@@ -119,7 +119,7 @@
 .edc-pg--label {
   font-size: 1rem;
   text-align: center;
-  color: #ffba9c;
+  color: var(--color-brand-light2);
   margin-bottom: 2.5rem;
 }
 
