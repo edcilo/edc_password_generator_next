@@ -1,6 +1,7 @@
-import { Button, Input, Tooltip, notification } from "antd"
-import { CopyOutlined } from "@ant-design/icons"
 import styles from "./styles.module.css"
+import { CopyOutlined } from "@ant-design/icons"
+import { Button, Input, Tooltip, notification } from "antd"
+import I18n from "../i18n"
 import { event } from "../../services/ga"
 
 const Password = ({ password }) => {
@@ -28,7 +29,7 @@ const Password = ({ password }) => {
         <Input value={password} readOnly />
       </div>
 
-      <Tooltip title="Click to copy!">
+      <Tooltip title={<I18n t="btnCopy" />}>
         <Button
           type="primary"
           className={styles["edc-pg--password-copy"]}

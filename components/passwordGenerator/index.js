@@ -1,7 +1,8 @@
+import styles from "./styles.module.css"
 import { Button, Card, Checkbox, Col, Row, Slider } from "antd"
 import { useEffect, useState } from "react"
-import styles from "./styles.module.css"
 import Password from "../password"
+import I18n from "../i18n"
 import PasswordGenerator from "../../services/password_generator"
 import { event } from "../../services/ga"
 
@@ -42,7 +43,9 @@ const EdcPasswordGenerator = () => {
   return (
     <Card title={<Password password={password} />}>
       <div className={styles["edc-pg--slider-container"]}>
-        <h4>Password length ({length} characters)</h4>
+        <h4>
+          <I18n t="charLengthCtrl" /> ({length} <I18n t="dict.characters" />)
+        </h4>
         <Slider
           defaultValue={length}
           min={6}
@@ -58,7 +61,7 @@ const EdcPasswordGenerator = () => {
             checked={uppercase}
             onChange={(e) => setUppercase(e.target.checked)}
           >
-            Uppercase
+            <I18n t="dict.uppercase" capitalize />
           </Checkbox>
         </Col>
 
@@ -67,7 +70,7 @@ const EdcPasswordGenerator = () => {
             checked={numbers}
             onChange={(e) => setNumbers(e.target.checked)}
           >
-            Numbers
+            <I18n t="dict.numbers" capitalize />
           </Checkbox>
         </Col>
 
@@ -77,7 +80,7 @@ const EdcPasswordGenerator = () => {
             checked={symbols}
             onChange={(e) => setSymbols(e.target.checked)}
           >
-            Symbols
+            <I18n t="dict.symbols" capitalize />
           </Checkbox>
         </Col>
       </Row>
@@ -88,7 +91,7 @@ const EdcPasswordGenerator = () => {
         onClick={clickHandler}
         block
       >
-        New password
+        <I18n t="btnNewPassword" />
       </Button>
     </Card>
   )

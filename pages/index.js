@@ -1,8 +1,9 @@
-import { NextSeo } from "next-seo"
 import styles from "../styles/Home.module.css"
+import { NextSeo } from "next-seo"
 import Image from "next/image"
 import EdcPasswordGenerator from "../components/passwordGenerator"
 import EdcLocaleCtrl from "../components/localeCtrl"
+import I18n from "../components/i18n"
 import SEO from "../seo"
 
 const Home = () => {
@@ -21,7 +22,12 @@ const Home = () => {
               className={`${styles["edc-pg--container"]} ${styles["edc-pg--header-container"]}`}
             >
               <a href={homeUrl}>
-                <Image src={logoUrl} width={90} height={28} alt="edc logo" />
+                <Image
+                  src={logoUrl}
+                  width={90}
+                  height={28}
+                  alt="edcilo.com logo"
+                />
               </a>
 
               <EdcLocaleCtrl className={styles["edc-pg--locale-ctrl"]} />
@@ -30,15 +36,15 @@ const Home = () => {
 
           <section className={`${styles["edc-pg--container"]}`}>
             <div>
-              <h1 className={styles["edc-pg--title"]}>Password Generator</h1>
+              <h1 className={styles["edc-pg--title"]}>
+                <I18n t="title" />
+              </h1>
               <p className={styles["edc-pg--label"]}>
-                Generate a secure password!
+                <I18n t="subtitle" />
               </p>
               <EdcPasswordGenerator />
               <p className={styles["edc-pg--disclaimer"]}>
-                This tool work on the client side. The passwords you generate
-                are never sent across the web. Please be careful where you paste
-                them.
+                <I18n t="disclaimer" />
               </p>
             </div>
           </section>

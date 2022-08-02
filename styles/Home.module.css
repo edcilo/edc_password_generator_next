@@ -109,11 +109,11 @@
 
 .edc-pg--title {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   color: #ffe4d8;
   font-weight: bold;
-  margin-bottom: 0rem;
-  line-height: 1.8;
+  margin-bottom: 1.4rem;
+  line-height: 1.2;
 }
 
 .edc-pg--label {
