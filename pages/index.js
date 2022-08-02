@@ -16,6 +16,7 @@ const Home = () => {
           content="Generate secure and random passwords"
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#e44d26" />
       </Head>
 
       <main className={styles["edc-pg"]}>
