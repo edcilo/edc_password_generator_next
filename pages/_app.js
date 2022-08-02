@@ -34,8 +34,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
-// data-theme="light"
-// style="color-scheme: light;"
-
-// data-theme="dark"
-// style="color-scheme: dark;"

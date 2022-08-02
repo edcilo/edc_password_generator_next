@@ -1,3 +1,4 @@
+[data-theme='light'],
 :root {
   --color-brand-dark: #a0351b;
   --color-brand: #e44d26;
@@ -88,4 +89,18 @@
   --border-base: #606266;
   --fill-blank: #303133;
   --fill-dark: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { 
+    --color-brand-dark: #26e493;
+    --color-brand: #1ba067;
+    --color-brand-light: #3dc889;
+    --color-brand-light1: #3d7e62;
+    --color-brand-light2: #005932;
+    --color-brand-complementary: #e44d26;
+    --border-base: #606266;
+    --fill-blank: #303133;
+    --fill-dark: #ffffff;
+  }
 }
