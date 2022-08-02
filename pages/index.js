@@ -12,9 +12,9 @@ const Home = () => {
   const { theme } = useTheme()
   const homeUrl = "https://edcilo.com"
   const logoUrl =
-    theme === "light"
-      ? "https://storage.edcilo.com/edcilo-logo-clear.svg"
-      : "https://storage.edcilo.com/edcilo-logo-dark.svg"
+    theme === "dark"
+      ? "https://storage.edcilo.com/edcilo-logo-dark.svg"
+      : "https://storage.edcilo.com/edcilo-logo-clear.svg"
 
   return (
     <>
