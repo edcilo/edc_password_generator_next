@@ -5,6 +5,10 @@ const nextConfig = {
   images: {
     domains: ["storage.edcilo.com"],
   },
+  i18n: {
+    locales: ["en", "es"],
+    defaultLocale: "en",
+  },
 }
 
 module.exports = nextConfig

@@ -2,6 +2,7 @@ import { NextSeo } from "next-seo"
 import styles from "../styles/Home.module.css"
 import Image from "next/image"
 import EdcPasswordGenerator from "../components/passwordGenerator"
+import EdcLocaleCtrl from "../components/localeCtrl"
 import SEO from "../seo"
 
 const Home = () => {
@@ -16,12 +17,18 @@ const Home = () => {
           <div className={styles["edc-pg--pattern"]} />
 
           <header className={styles["edc-pg--header"]}>
-            <a href={homeUrl}>
-              <Image src={logoUrl} width={90} height={28} alt="edc logo" />
-            </a>
+            <div
+              className={`${styles["edc-pg--container"]} ${styles["edc-pg--header-container"]}`}
+            >
+              <a href={homeUrl}>
+                <Image src={logoUrl} width={90} height={28} alt="edc logo" />
+              </a>
+
+              <EdcLocaleCtrl className={styles["edc-pg--locale-ctrl"]} />
+            </div>
           </header>
 
-          <section className={styles["edc-pg--body"]}>
+          <section className={`${styles["edc-pg--container"]}`}>
             <div>
               <h1 className={styles["edc-pg--title"]}>Password Generator</h1>
               <p className={styles["edc-pg--label"]}>
@@ -50,9 +57,11 @@ const Home = () => {
         </div>
 
         <footer className={styles["edc-pg--footer"]}>
-          <a href={homeUrl} className={styles.link}>
-            edcilo.com
-          </a>
+          <div className={styles["edc-pg--container"]}>
+            <a href={homeUrl} className={styles.link}>
+              edcilo.com
+            </a>
+          </div>
         </footer>
       </main>
     </>
