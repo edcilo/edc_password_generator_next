@@ -1,25 +1,28 @@
 import styles from "../styles/Home.module.css"
+import { useEffect, useState } from "react"
 import { NextSeo } from "next-seo"
-import { useTheme } from "next-themes"
 import Image from "next/image"
 import EdcPasswordGenerator from "../components/passwordGenerator"
 import EdcLocaleCtrl from "../components/localeCtrl"
-// import EdcThemeCtrl from "../components/themeCtrl"
+import EdcThemeCtrl from "../components/themeCtrl"
 import I18n from "../components/i18n"
 import SEO from "../seo"
 
 const Home = () => {
-  const { theme } = useTheme()
+  const logoClear = "https://storage.edcilo.com/edcilo-logo-clear.svg"
+  const logoDark = "https://storage.edcilo.com/edcilo-logo-dark.svg"
+  const [theme, setTheme] = useState("light")
+  const [logo, setLogo] = useState(logoClear)
   const homeUrl = "https://edcilo.com"
-  const logoUrl =
-    theme === "dark"
-      ? "https://storage.edcilo.com/edcilo-logo-dark.svg"
-      : "https://storage.edcilo.com/edcilo-logo-clear.svg"
+
+  useEffect(() => {
+    setLogo(theme === "dark" ? logoDark : logoClear)
+  }, [theme])
 
   return (
     <>
       <NextSeo {...SEO} />
-      <main className={styles["edc-pg"]}>
+      <main className={styles["edc-pg"]} data-theme={theme}>
         <div className={styles["edc-pg--cover"]}>
           <div className={styles["edc-pg--pattern"]} />
 
@@ -29,7 +32,7 @@ const Home = () => {
             >
               <a href={homeUrl}>
                 <Image
-                  src={logoUrl}
+                  src={logo}
                   width={90}
                   height={28}
                   alt="edcilo.com logo"
@@ -39,7 +42,7 @@ const Home = () => {
               <span>
                 <EdcLocaleCtrl className={styles["edc-pg--locale-ctrl"]} />
                 &nbsp;
-                {/* <EdcThemeCtrl /> */}
+                <EdcThemeCtrl onChange={(theme) => setTheme(theme)} />
               </span>
             </div>
           </header>

@@ -1,7 +1,6 @@
 import "../styles/variables.css"
 import "../styles/globals.css"
 import "antd/dist/antd.css"
-import { ThemeProvider } from "next-themes"
 import Script from "next/script"
 
 function MyApp({ Component, pageProps }) {
@@ -29,9 +28,7 @@ function MyApp({ Component, pageProps }) {
         `}
       </Script>
 
-      <ThemeProvider>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Component {...pageProps} />
     </>
   )
 }
