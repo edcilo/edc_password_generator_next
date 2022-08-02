@@ -61,7 +61,18 @@ const Home = () => {
               </p>
             </div>
           </section>
+        </div>
 
+        <div className={styles["edc-pg--media"]}>
+          <div className={`${styles["edc-pg--container"]}`}>
+            <div className={styles["edc-pg--avatar"]}>
+              <Image
+                src="https://storage.edcilo.com/avatar.svg"
+                width={373}
+                height={385}
+              />
+            </div>
+          </div>
           <svg
             className={styles["edc-pg--curve"]}
             xmlns="http://www.w3.org/2000/svg"

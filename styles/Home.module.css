@@ -34,12 +34,6 @@
   background: linear-gradient(to right, #ef473a, #cb2d3e); */
 }
 
-.edc-pg--curve {
-  z-index: 1;
-  position: absolute;
-  bottom: -1px;
-}
-
 .edc-pg--pattern {
   position: absolute;
   width: 100%;
@@ -75,6 +69,7 @@
   max-width: 400px;
   padding: 0 1rem;
   z-index: 100;
+  position: relative;
 }
 
 .edc-pg--header-container {
@@ -137,4 +132,27 @@
 .link:hover {
   color: var(--color-brand-dark);
   font-weight: bold;
+}
+
+
+.edc-pg--media {
+  background-color: magenta;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.edc-pg--avatar {
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: -560px;
+}
+
+.edc-pg--curve {
+  z-index: 101;
+  position: absolute;
+  bottom: -1px;
 }
