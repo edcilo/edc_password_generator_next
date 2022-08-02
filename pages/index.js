@@ -1,4 +1,5 @@
 import Head from "next/head"
+import { NextSeo } from "next-seo"
 import styles from "../styles/Home.module.css"
 import Image from "next/image"
 import EdcPasswordGenerator from "../components/passwordGenerator"
@@ -9,15 +10,27 @@ const Home = () => {
 
   return (
     <>
-      <Head>
-        <title>edc | password generator</title>
-        <meta
-          name="description"
-          content="Generate secure and random passwords"
-        />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#e44d26" />
-      </Head>
+      <NextSeo
+        title="Password generator"
+        description="Generate secure and random passwords."
+        canonical="https://password-generator.edcilo.com"
+        twitter={{
+          cardType: "summary",
+          handle: "@edcilo",
+        }}
+        additionalMetaTags={[
+          {
+            name: "theme-color",
+            content: "#e44d26",
+          },
+        ]}
+        additionalLinkTags={[
+          {
+            rel: "icon",
+            href: "/favicon.ico",
+          },
+        ]}
+      />
 
       <main className={styles["edc-pg"]}>
         <div className={styles["edc-pg--cover"]}>
