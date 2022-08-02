@@ -26,11 +26,18 @@ const Password = ({ password }) => {
   return (
     <div className={styles["edc-pg--password-ctrls"]}>
       <div className={styles["edc-pg--password"]}>
-        <Input value={password} readOnly />
+        <Input
+          aria-label="password suggested"
+          role="textbox"
+          value={password}
+          readOnly
+        />
       </div>
 
       <Tooltip title={<I18n t="btnCopy" />}>
         <Button
+          aria-label="Copy password button"
+          role="button"
           type="primary"
           className={styles["edc-pg--password-copy"]}
           onClick={() => copyToClipboard(password)}

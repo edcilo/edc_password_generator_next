@@ -131,9 +131,10 @@
 
 .link {
   text-decoration: none;
-  color: var(--color-brand);
+  color: var(--color-brand-dark);
 }
 
 .link:hover {
   color: var(--color-brand-dark);
+  font-weight: bold;
 }

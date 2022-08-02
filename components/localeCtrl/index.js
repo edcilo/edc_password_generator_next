@@ -12,7 +12,7 @@ const EdcLocaleCtrl = ({ ...props }) => {
         {
           key: "en",
           label: (
-            <Link href="/" locale="en">
+            <Link aria-label="English locale" role="link" href="/" locale="en">
               English
             </Link>
           ),
@@ -20,7 +20,7 @@ const EdcLocaleCtrl = ({ ...props }) => {
         {
           key: "es",
           label: (
-            <Link href="/" locale="es">
+            <Link aria-label="Spanish locale" role="link" href="/" locale="es">
               Español
             </Link>
           ),
@@ -31,7 +31,13 @@ const EdcLocaleCtrl = ({ ...props }) => {
 
   return (
     <Dropdown overlay={menu} placement="bottomRight">
-      <Button {...props} size="small" icon={<TranslationOutlined />} ghost>
+      <Button
+        {...props}
+        aria-label="change locale menu"
+        size="small"
+        icon={<TranslationOutlined />}
+        ghost
+      >
         {router.locale}
       </Button>
     </Dropdown>

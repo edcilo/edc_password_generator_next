@@ -33,8 +33,8 @@ const Home = () => {
               <a href={homeUrl}>
                 <Image
                   src={logo}
-                  width={90}
-                  height={28}
+                  width={100}
+                  height={31.6}
                   alt="edcilo.com logo"
                 />
               </a>

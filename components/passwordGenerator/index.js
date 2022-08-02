@@ -47,6 +47,8 @@ const EdcPasswordGenerator = () => {
           <I18n t="charLengthCtrl" /> ({length} <I18n t="dict.characters" />)
         </h4>
         <Slider
+          aria-label="length password slider"
+          role="slider"
           defaultValue={length}
           min={6}
           max={256}
@@ -58,6 +60,8 @@ const EdcPasswordGenerator = () => {
       <Row className={styles["edc-pg--checks"]}>
         <Col span={8}>
           <Checkbox
+            aria-label="uppercase checkbox"
+            role="checkbox"
             checked={uppercase}
             onChange={(e) => setUppercase(e.target.checked)}
           >
@@ -67,6 +71,8 @@ const EdcPasswordGenerator = () => {
 
         <Col span={8}>
           <Checkbox
+            aria-label="numbers checkbox"
+            role="checkbox"
             checked={numbers}
             onChange={(e) => setNumbers(e.target.checked)}
           >
@@ -76,6 +82,8 @@ const EdcPasswordGenerator = () => {
 
         <Col span={8}>
           <Checkbox
+            aria-label="symbols checkbox"
+            role="checkbox"
             className={styles["edc-pg--checkbox"]}
             checked={symbols}
             onChange={(e) => setSymbols(e.target.checked)}
@@ -86,6 +94,8 @@ const EdcPasswordGenerator = () => {
       </Row>
 
       <Button
+        aria-label="new password button"
+        role="button"
         type="primary"
         className={styles["edc-pg--new-pass-btn"]}
         onClick={clickHandler}

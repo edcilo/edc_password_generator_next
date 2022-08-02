@@ -24,6 +24,8 @@ const EdcThemeCtrl = ({ onChange }) => {
 
   return (
     <Switch
+      aria-label="switch theme control"
+      role="switch"
       checked={theme === "dark"}
       checkedChildren={<Icon component={moon} />}
       unCheckedChildren={<Icon component={sun} />}
