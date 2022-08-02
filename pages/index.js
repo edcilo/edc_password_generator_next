@@ -4,7 +4,7 @@ import { useTheme } from "next-themes"
 import Image from "next/image"
 import EdcPasswordGenerator from "../components/passwordGenerator"
 import EdcLocaleCtrl from "../components/localeCtrl"
-import EdcThemeCtrl from "../components/themeCtrl"
+// import EdcThemeCtrl from "../components/themeCtrl"
 import I18n from "../components/i18n"
 import SEO from "../seo"
 
@@ -39,7 +39,7 @@ const Home = () => {
               <span>
                 <EdcLocaleCtrl className={styles["edc-pg--locale-ctrl"]} />
                 &nbsp;
-                <EdcThemeCtrl />
+                {/* <EdcThemeCtrl /> */}
               </span>
             </div>
           </header>

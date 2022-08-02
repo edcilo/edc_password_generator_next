@@ -1,7 +1,7 @@
 import "../styles/variables.css"
 import "../styles/globals.css"
 import "antd/dist/antd.css"
-// import { ThemeProvider } from "next-themes"
+import { ThemeProvider } from "next-themes"
 import Script from "next/script"
 
 function MyApp({ Component, pageProps }) {
@@ -29,9 +29,16 @@ function MyApp({ Component, pageProps }) {
         `}
       </Script>
 
-      <Component {...pageProps} />
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }
 
 export default MyApp
+// data-theme="light"
+// style="color-scheme: light;"
+
+// data-theme="dark"
+// style="color-scheme: dark;"
