@@ -50,6 +50,10 @@ a {
   background: transparent !important;
 }
 
+.ant-switch-handle::before {
+  background: var(--fill-blank) !important;
+}
+
 .ant-checkbox-checked::after {
   border-color: var(--color-brand-complementary) !important;
 }
