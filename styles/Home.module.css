@@ -28,10 +28,6 @@
     var(--color-brand-light),
     var(--color-brand)
   );
-
-  /* background: #cb2d3e;
-  background: -webkit-linear-gradient(to right, #ef473a, #cb2d3d);
-  background: linear-gradient(to right, #ef473a, #cb2d3e); */
 }
 
 .edc-pg--pattern {
@@ -83,13 +79,17 @@
   height: auto;
 }
 
+.edc-pg--header-cntrls {
+  display: inline-flex;
+  align-items: center;
+}
+
 .edc-pg--locale-ctrl {
-  color: var(--color-brand-light2) !important;
+  color: var(--fill-blank) !important;
   border-color: var(--color-brand-light2) !important;
 }
 
 .edc-pg--locale-ctrl:hover {
-  color: var(--color-brand-light1) !important;
   border-color: var(--color-brand-light1) !important;
 }
 

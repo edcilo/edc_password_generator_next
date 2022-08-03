@@ -13,7 +13,9 @@ a {
 
 * {
   box-sizing: border-box;
-  transition: background 0.1s, linear 0.1s, color 0.1s, border 0.1s !important;
+  transition-property: background, background-color, border, fill !important;
+  transition-duration: .2s !important;
+  transition-timing-function: linear !important;
 }
 
 /* overwriting antd styles */
@@ -37,15 +39,11 @@ a {
 
 .ant-switch {
   box-shadow: 0 0 0 1px var(--color-brand-light2) !important;
-  background: var(--color-brand-light) !important;
-}
-
-.ant-switch svg {
-  fill: var(--color-brand-light2);
+  background: transparent !important;
 }
 
 .ant-switch-checked {
-  background-color: var(--color-brand-light) !important;
+  background: transparent !important;
 }
 
 .ant-checkbox-checked::after {

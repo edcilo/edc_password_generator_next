@@ -39,7 +39,7 @@ const Home = () => {
                 />
               </a>
 
-              <span>
+              <span className={styles["edc-pg--header-cntrls"]}>
                 <EdcLocaleCtrl className={styles["edc-pg--locale-ctrl"]} />
                 &nbsp;
                 <EdcThemeCtrl onChange={(theme) => setTheme(theme)} />
