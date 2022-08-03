@@ -11,6 +11,8 @@ import SEO from "../seo"
 const Home = () => {
   const logoClear = "https://storage.edcilo.com/edcilo-logo-clear.svg"
   const logoDark = "https://storage.edcilo.com/edcilo-logo-dark.svg"
+  const avatar = "https://storage.edcilo.com/edc-avatar.svg"
+  const avatarSleeping = "https://storage.edcilo.com/edc-avatar-sleeping.svg"
   const [theme, setTheme] = useState("light")
   const [logo, setLogo] = useState(logoClear)
   const homeUrl = "https://edcilo.com"
@@ -64,13 +66,20 @@ const Home = () => {
         </div>
 
         <div className={styles["edc-pg--media"]}>
-          <div className={`${styles["edc-pg--container"]}`}>
-            <div className={styles["edc-pg--avatar"]}>
-              <Image
-                src="https://storage.edcilo.com/avatar.svg"
-                width={373}
-                height={385}
-              />
+          <div className={styles["edc-pg--container"]}>
+            <div
+              className={`${styles["edc-pg--avatar"]} ${
+                theme === "dark" ? "hidden" : ""
+              }`}
+            >
+              <Image src={avatar} width={373} height={385} />
+            </div>
+            <div
+              className={`${styles["edc-pg--avatar"]} ${
+                styles["edc-pg--avatar-right"]
+              } ${theme === "light" ? "hidden" : ""}`}
+            >
+              <Image src={avatarSleeping} width={373} height={385} />
             </div>
           </div>
           <svg

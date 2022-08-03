@@ -151,6 +151,11 @@
   left: -560px;
 }
 
+.edc-pg--avatar-right {
+  left: auto;
+  right: -560px;
+}
+
 .edc-pg--curve {
   z-index: 101;
   position: absolute;

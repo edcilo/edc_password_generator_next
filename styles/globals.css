@@ -18,6 +18,10 @@ a {
   transition-timing-function: linear !important;
 }
 
+.hidden {
+  display: none;
+}
+
 /* overwriting antd styles */
 .ant-card {
   background: var(--fill-blank) !important;
