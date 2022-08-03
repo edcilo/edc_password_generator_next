@@ -4,17 +4,17 @@ import "antd/dist/antd.css"
 import Script from "next/script"
 
 function MyApp({ Component, pageProps }) {
-  // const adClient = process.env.NEXT_PUBLIC_AD_CLIENT
+  const adClient = process.env.NEXT_PUBLIC_AD_CLIENT
   const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS
   const gaUrl = `https://www.googletagmanager.com/gtag/js?id=${gaId}`
 
   return (
     <>
-      {/* <Script
+      <Script
         data-ad-client={adClient}
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      /> */}
+      />
 
       <Script strategy="lazyOnload" src={gaUrl} />
       <Script strategy="lazyOnload" id="google-analytics">
