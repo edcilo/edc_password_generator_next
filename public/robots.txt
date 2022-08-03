@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://password-generator.edcilo.com/sitemap.xml
+Sitemap: https://www.passwordgenerator.cool/sitemap.xml

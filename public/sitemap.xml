@@ -6,15 +6,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml" >
     <url>
-        <loc>https://password-generator.edcilo.com/</loc>
+        <loc>https://www.passwordgenerator.cool/</loc>
         <xhtml:link
             rel="alternate"
             hreflang="en"
-            href="https://password-generator.edcilo.com/"/>
+            href="https://www.passwordgenerator.cool/"/>
         <xhtml:link
             rel="alternate"
             hreflang="es"
-            href="https://password-generator.edcilo.com/es/"/>
+            href="https://www.passwordgenerator.cool/es/"/>
         <lastmod>2022-08-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>

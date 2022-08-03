@@ -1,10 +1,10 @@
 const SEO = {
   title: "Password generator",
   description: "Generate secure and random passwords.",
-  canonical: "https://password-generator.edcilo.com",
+  canonical: "https://www.passwordgenerator.cool",
   openGraph: {
     type: "website",
-    url: "https://password-generator.edcilo.com",
+    url: "https://www.passwordgenerator.cool",
     locale: "en_US",
     site_name: "edcilo.com - Password generator",
     images: [
