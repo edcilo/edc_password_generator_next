@@ -10,11 +10,11 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Script
+      {/* <Script
         data-ad-client={adClient}
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      />
+      /> */}
 
       <Script strategy="lazyOnload" src={gaUrl} />
       <Script strategy="lazyOnload" id="google-analytics">
