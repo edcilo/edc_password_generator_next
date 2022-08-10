@@ -5,7 +5,7 @@ const i18n = rosetta({
     title: "Password Generator",
     subtitle: "Generate a secure password!",
     disclaimer:
-      "This tool work on the client side. The passwords you generate are never sent across the web. Please be careful where you paste them.",
+      "This tool works on the client side. The passwords you generate are never sent across the web. Please be careful where you paste them.",
     btnCopy: "Click to copy!",
     btnNewPassword: "New password",
     charLengthCtrl: "Password length",
