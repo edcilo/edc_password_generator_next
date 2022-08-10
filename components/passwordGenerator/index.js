@@ -6,12 +6,19 @@ import I18n from "../i18n"
 import PasswordGenerator from "../../services/password_generator"
 import { event } from "../../services/ga"
 
-const generatePassword = (length, uppercase, numbers, symbols) => {
+const generatePassword = ({
+  length,
+  uppercase,
+  numbers,
+  symbols,
+  avoidSimilarCharacters,
+}) => {
   const pg = new PasswordGenerator(length)
 
   pg.with_uppercase = uppercase
   pg.with_numbers = numbers
   pg.with_symbols = symbols
+  pg.avoid_similar_characters = avoidSimilarCharacters
 
   return pg.generate()
 }
@@ -22,9 +29,16 @@ const EdcPasswordGenerator = () => {
   const [uppercase, setUppercase] = useState(true)
   const [numbers, setNumbers] = useState(true)
   const [symbols, setSymbols] = useState(true)
+  const [avoidSimilarCharacters, setAvoidSimilarCharacters] = useState(false)
 
   const newPasswordHandler = () => {
-    const newPassword = generatePassword(length, uppercase, numbers, symbols)
+    const newPassword = generatePassword({
+      length,
+      uppercase,
+      numbers,
+      symbols,
+      avoidSimilarCharacters,
+    })
     setPassword(newPassword)
   }
 
@@ -57,8 +71,8 @@ const EdcPasswordGenerator = () => {
         />
       </div>
 
-      <Row className={styles["edc-pg--checks"]}>
-        <Col span={8}>
+      <ul className={styles["edc-pg--check-group"]}>
+        <li className={styles["edc-pg--check-item"]}>
           <Checkbox
             aria-label="uppercase checkbox"
             role="checkbox"
@@ -67,9 +81,9 @@ const EdcPasswordGenerator = () => {
           >
             <I18n t="dict.uppercase" capitalize />
           </Checkbox>
-        </Col>
+        </li>
 
-        <Col span={8}>
+        <li className={styles["edc-pg--check-item"]}>
           <Checkbox
             aria-label="numbers checkbox"
             role="checkbox"
@@ -78,9 +92,9 @@ const EdcPasswordGenerator = () => {
           >
             <I18n t="dict.numbers" capitalize />
           </Checkbox>
-        </Col>
+        </li>
 
-        <Col span={8}>
+        <li className={styles["edc-pg--check-item"]}>
           <Checkbox
             aria-label="symbols checkbox"
             role="checkbox"
@@ -90,8 +104,19 @@ const EdcPasswordGenerator = () => {
           >
             <I18n t="dict.symbols" capitalize />
           </Checkbox>
-        </Col>
-      </Row>
+        </li>
+        <li className={styles["edc-pg--check-item"]}>
+          <Checkbox
+            aria-label="avoid similar characters"
+            role="checkbox"
+            className={styles["edc-pg--checkbox"]}
+            checked={avoidSimilarCharacters}
+            onChange={(e) => setAvoidSimilarCharacters(e.target.checked)}
+          >
+            <I18n t="avoidSimilarCharacters" capitalize />
+          </Checkbox>
+        </li>
+      </ul>
 
       <Button
         aria-label="new password button"

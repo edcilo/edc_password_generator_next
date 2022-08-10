@@ -27,6 +27,7 @@ const Password = ({ password }) => {
     <div className={styles["edc-pg--password-ctrls"]}>
       <div className={styles["edc-pg--password"]}>
         <Input
+          className={styles["edc-pg--password-ctrl"]}
           aria-label="password suggested"
           role="textbox"
           value={password}

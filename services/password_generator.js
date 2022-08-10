@@ -6,6 +6,7 @@ export default class PasswordGenerator {
   with_uppercase = true
   with_numbers = true
   with_symbols = true
+  avoid_similar_characters = false
 
   _length
 
@@ -68,6 +69,7 @@ export default class PasswordGenerator {
     "]",
     "{",
     "}",
+    "|",
     ";",
     ":",
     ",",
@@ -77,6 +79,13 @@ export default class PasswordGenerator {
     "/",
     "?",
   ]
+
+  _similar_characters = {
+    l: [
+      { dict: this.letters_uppercase, similar: "I" },
+      { dict: this.symbols, similar: "|" },
+    ],
+  }
 
   get length() {
     return this._length
@@ -137,30 +146,25 @@ export default class PasswordGenerator {
   }
 
   get pass_lower() {
-    return this._index_to_char(
-      this._get_random_list(this.lower_length, this.letters.length),
-      this.letters
-    )
+    return this._get_characters(this.lower_length, this.letters)
   }
 
   get pass_upper() {
-    return this._index_to_char(
-      this._get_random_list(this.upper_length, this.letters_uppercase.length),
-      this.letters_uppercase
-    )
+    return this._get_characters(this.upper_length, this.letters_uppercase)
   }
 
   get pass_numbers() {
-    return this._index_to_char(
-      this._get_random_list(this.numbers_length, this.numbers.length),
-      this.numbers
-    )
+    return this._get_characters(this.numbers_length, this.numbers)
   }
 
   get pass_symbols() {
+    return this._get_characters(this.symbols_length, this.symbols)
+  }
+
+  _get_characters(length, dictionary) {
     return this._index_to_char(
-      this._get_random_list(this.symbols_length, this.symbols.length),
-      this.symbols
+      this._get_random_list(length, dictionary.length),
+      dictionary
     )
   }
 
@@ -180,6 +184,34 @@ export default class PasswordGenerator {
     return list
   }
 
+  _check_similar_characters(pass) {
+    const _pass = pass
+
+    if (!this.avoid_similar_characters) {
+      return pass
+    }
+
+    // TODO: refactor this code
+    pass.map((char) => {
+      if (this._similar_characters[char]) {
+        this._similar_characters[char].map((similar) => {
+          pass.map((_char, index) => {
+            if (_char === similar.similar) {
+              let newChar = _char
+              do {
+                newChar = this._get_characters(1, similar.dict)
+              } while (newChar === _char)
+              console.log("=>", char, _char, newChar)
+              _pass[index] = newChar[0]
+            }
+          })
+        })
+      }
+    })
+
+    return _pass
+  }
+
   _shuffle(array) {
     let currentIndex = array.length
     let randomIndex = null
@@ -197,11 +229,13 @@ export default class PasswordGenerator {
   }
 
   generate() {
-    return this._shuffle([
-      ...this.pass_lower,
-      ...this.pass_upper,
-      ...this.pass_numbers,
-      ...this.pass_symbols,
-    ]).join("")
+    return this._shuffle(
+      this._check_similar_characters([
+        ...this.pass_lower,
+        ...this.pass_upper,
+        ...this.pass_numbers,
+        ...this.pass_symbols,
+      ])
+    ).join("")
   }
 }

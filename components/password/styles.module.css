@@ -8,6 +8,10 @@
   margin-right: 1rem;
 }
 
+.edc-pg--password-ctrl {
+  font-family: monospace;
+}
+
 .edc-pg--password-copy {
   background: var(--color-brand-complementary) !important;
   border-color: var(--color-brand-complementary) !important;

@@ -6,8 +6,14 @@
   margin: 0;
 }
 
-.edc-pg--checks {
-  margin-bottom: 1rem;
+.edc-pg--check-group {
+  margin: 0 0 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.edc-pg--check-item {
+  margin-bottom: 0.5rem;
 }
 
 .edc-pg--new-pass-btn {

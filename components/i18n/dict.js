@@ -9,6 +9,7 @@ const i18n = rosetta({
     btnCopy: "Click to copy!",
     btnNewPassword: "New password",
     charLengthCtrl: "Password length",
+    avoidSimilarCharacters: "Avoid similar characters",
     dict: {
       characters: "characters",
       numbers: "numbers",
@@ -24,6 +25,7 @@ const i18n = rosetta({
     btnCopy: "Haz clic para copiar!",
     btnNewPassword: "Generar contraseña",
     charLengthCtrl: "Longitud",
+    avoidSimilarCharacters: "Evitar caracteres similares",
     dict: {
       characters: "letras",
       numbers: "números",
